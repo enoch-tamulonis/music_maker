@@ -1,4 +1,6 @@
 class Api::V1::ProjectsController < ApplicationController
+  require 'pry'
+
   def index
     projects = Project.all
     render json: projects
@@ -14,6 +16,7 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def show
+    binding.pry
     if project
       render json: project
     else
@@ -33,6 +36,6 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def project
-    @project ||= Project.find(params[:id])
+    @project ||= Project.find_by_slug(params[:slug])
   end
 end

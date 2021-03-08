@@ -34,7 +34,7 @@ class Projects extends Component {
         />
         <div className="flex flex-col p-4">
           <h5 className="text-lg text-gray-900">{ project.title }</h5>
-          <Link to={`/project/${project.id}`} className="text-blue-100 bg-blue-600 px-2 py-1 mt-4 mr-auto transform hover:-translate-y-0.5 transition duration-500">
+          <Link to={`/project/${project.slug}`} className="text-blue-100 bg-blue-600 px-2 py-1 mt-4 mr-auto transform hover:-translate-y-0.5 transition duration-500">
             View Project
           </Link>
         </div>
