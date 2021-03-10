@@ -26,7 +26,7 @@ class Projects extends Component {
   render() {
     const { projects } = this.state;
     const allProjects = projects.map((project, index) => (
-      <div key={index} className="w-80 h-96 shadow m-8 bg-gray-300 rounded-sm">
+      <div key={index} className="w-80 h-96 shadow mx-auto md:mx-6 my-8 bg-gray-300 rounded-sm">
         <img
           src={project.image ? project.image : DefaultProjectImage}
           className="card-img-top"

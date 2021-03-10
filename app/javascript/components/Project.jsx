@@ -1,12 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 
 class Project extends Component {
   constructor(props) {
     super(props);
-    this.state = { project: { title: "" } };
-
-    this.addHtmlEntities = this.addHtmlEntities.bind(this);
+    this.state = { project: {} };
   }
 
   componentDidMount() {
@@ -16,10 +14,10 @@ class Project extends Component {
       }
     } = this.props;
 
-    const url =  `/api/v1/show/${slug}`
+    const url =  `/api/v1/show/${slug}`;
 
     fetch(url)
-      .then(resonse => {
+      .then(response => {
         if (response.ok) {
           return response.json();
         }
@@ -29,19 +27,13 @@ class Project extends Component {
       .catch(() => this.props.history.push("/projects"))
   }
 
-  addHtmlEntities(str) {
-    return String(str)
-     .replace(/&lt;/g, "<")
-     .replace(/&gt;/g, ">");
-  }
-
   render() {
     const { project } = this.state;
 
     return (
       <div className="h-screen w-full">
         <section className="w-full py-10 flex flex-col justify-center bg-gray-300">
-
+          <h1 className="text-5xl text-center text-black"> { project.title } </h1>
         </section>
       </div>
     );

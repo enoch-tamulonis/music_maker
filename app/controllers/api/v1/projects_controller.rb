@@ -16,7 +16,6 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def show
-    binding.pry
     if project
       render json: project
     else
